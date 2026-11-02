@@ -96,4 +96,13 @@ for ($page = 2; $page <= 6; $page++) {
     }
 
     echo '</br></br></br></br>';
+
+    $radovi = DiplomskiRadovi::readAll();
+    foreach ($radovi as $rad) {
+        echo ' ' . $rad->get_naziv_rada() . '</br>';
+        echo ' ' . $rad->get_tekst_rada() . '</br>';
+        echo ' ' . $rad->get_oib_tvrtke() . '</br>';
+        echo ' ' . $rad->get_link_rada() . '</br>';
+        echo '</br>';
+    }
 }
